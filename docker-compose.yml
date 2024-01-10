@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  sentiment_analysis:
+    image: jupyter/datascience-notebook
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - JUPYTER_TOKEN=1234
+    volumes:
+      - ./:/home/jovyan/work
+    ports:
+      - 8888:8888
+    container_name: sentiment_analysis
